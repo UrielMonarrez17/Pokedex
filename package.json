@@ -1,0 +1,22 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Second Exam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrielMonarrez17/Pokedex.git"
+  },
+  "author": "Uriel Arturo Monarrez Cervantes, Diego Alexis Parada Leon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UrielMonarrez17/Pokedex/issues"
+  },
+  "homepage": "https://github.com/UrielMonarrez17/Pokedex#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
