@@ -9,7 +9,7 @@ app.set('views', './views');
 
 // Ruta principal que renderiza la plantilla EJS
 app.get('/', (req, res) => {
-  res.render('index', { titulo: 'Página Principal' });
+  res.render('index', { titulo: 'Pokedex' });
 });
 
 app.listen(port, () => {
