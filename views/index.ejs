@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="style.css">
+    <style></style>
+</head>
+<body>
+     <!-- Barra lateral con los nombres de los Pokémon -->
+     <div class="sidebar">
+        <ul id="pokemonList">
+            <% pokemons.forEach(pokemon => { %>
+                <li data-id="<%= pokemon.id %>">
+                    <%= pokemon.id %>. <%= pokemon.name %>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+     <!-- Zona de visualización del Pokémon seleccionado -->
+     <div class="pokemon-display">
+        <!-- Aquí se muestra el Pokémon por defecto (el primero de la lista) -->
+        <img id="pokemonImage" src="<%= pokemons[0].image %>" alt="<%= pokemons[0].name %>">
+        <h2 id="pokemonName"><%= pokemons[0].name %></h2>
+        <p id="pokemonType">Type: <%= pokemons[0].type %></p>
+    </div>
+
+    <h1>Pokédex</h1>
+    <div class="pokedex">
+        <% pokemons.forEach(pokemon => { %>
+            <div class="pokemon-card">
+                <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>">
+                <!--<img src="pokedex"/>-->
+                <h2><%= pokemon.name %></h2>
+                <p>Type: <%= pokemon.type %></p>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
