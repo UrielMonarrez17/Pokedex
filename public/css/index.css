@@ -1,16 +1,122 @@
+body{
+    padding: 0%;
+    margin: 0%;
+    background-attachment:scroll;
+    background-size:contain;
+    background-repeat: no-repeat;
+    border: 15px solid rgb(235,51,51);
+}
+
+.navbar{
+width: 100% !important;
+display: flex;
+flex-direction: column;
+
+height: 110px;
+z-index: 4;
+justify-content: center;
+align-content: space-between;
+background-size:cover;
+background-repeat: no-repeat;
+background-color:rgb(235,51,51);
+}
+
+.inicio{
+    width: 125px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.inicio:hover{
+    
+
+    transform: rotate(180deg); 
+
+}
+
+.search{
+height: 65px;
+width: 50%;
+background-color: rgb(144,20,22);
+}
+
 .tarjetas{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
+    align-content: center;
+    justify-content: center;
+    width: 96%;
+    height: 80%;
+
 }
 
-.tarjeta_1{
+.tarjeta{
+    width:120px ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 120px;
+    margin: 1.8%;
+    background-image: linear-gradient(to top, red 60%,transparent 40%);
+    border-radius: 10px;
+    z-index: 0;
+    cursor: pointer;
+    justify-content: center;
+}
+
+
+.imagenes{
+    
     width:100px ;
     height: 100px;
+    z-index: 3;
 }
 
-.card text-bg-dark{
-    height: 100px !important;
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+justify-content: space-between;
+width: 100%;
+background-image: url("/images/fondo_container.jpg");
+background-size:cover;
+background-repeat: no-repeat;
+border: 16px solid rgb(14,79,169);
+    max-width: 100% !important;
 }
+
+.butoncitoN{
+    transform: rotate(180deg);
+    height: 50px;
+    width: 2%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.butoncitoN:hover{
+    transform: rotate(180deg) scale(1.2); 
+}
+
+.butoncitoP{
+    height: 50px;
+    width: 2%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.butoncitoP:hover{
+    transform: scale(1.2); 
+}
+
+.modal-content {
+    position: relative;
+    background-image: url('https://example.com/imagen.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }

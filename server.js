@@ -29,7 +29,18 @@ app.get("/", async (req, res) => {
       imagen:""
     });
   }catch (error) {
-    console.error("Error al obtener los datos:", error);
+    res.status(500).send("Error al cargar los datos");
+  }
+
+ 
+});
+
+app.get("/inicio", async(req, res) => {
+
+  try{
+    pokemons_show = await axios.get("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20");
+    res.redirect("/");
+  }catch (error) {
     res.status(500).send("Error al cargar los datos");
   }
 
@@ -46,14 +57,32 @@ app.get("/pokemon/:url2", async(req, res) => {
   }catch{ 
     res.status(404).send("Pokemon no encontrado");
   }
+});
  
+  app.get("/pokemon/:search", async(req, res) => {
+    const { search } = req.params;
+    
+    try{
+    pokemons_show = await axios.get(`https://pokeapi.co/api/v2/pokemon/${search}/`);
+res.json({abilities:pokemons_show.data.abilities,
+  experience:pokemons_show.data.base_experience,
+  height:pokemons_show.data.height,
+id:pokemons_show.data.id,
+moves:pokemons_show.data.moves,
+weight:pokemons_show.data.weight,
+types:pokemons_show.data.types,
+image:pokemons_show.data.sprites.front_default,
+name:pokemons_show.data.name});
+    }catch{ 
+      res.status(404).send("Pokemon no encontrado");
+    }
+
   });
 
   app.get("/pokemon/properties/:urlP", async(req, res) => {
     const { urlP } = req.params;
     try{
       const pokemonProperties = await axios.get(urlP);
-    console.log("props:",pokemonProperties);
     }catch{ 
       res.status(404).send("Pokemon no encontrado");
     }
@@ -64,7 +93,6 @@ app.get("/pokemon/:url2", async(req, res) => {
       const { urlF } = req.params;
       try{
         const pokemonForms = await axios.get(urlF);
-      console.log("props:",pokemonForms);
       }catch{ 
         res.status(404).send("Pokemon no encontrado");
       }
@@ -75,7 +103,6 @@ app.get("/pokemon/:url2", async(req, res) => {
     const { urlI } = req.params;
     try{
     const pokemonImagen = await axios.get(urlI);
-    console.log("props:",pokemonImagen);
     res.json({ link: pokemonImagen.data.sprites.front_default} );
     }catch{ 
       res.status(404).send("Pokemon no encontrado");
