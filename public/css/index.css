@@ -1,0 +1,16 @@
+.tarjetas{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.tarjeta_1{
+    width:100px ;
+    height: 100px;
+}
+
+.card text-bg-dark{
+    height: 100px !important;
+}

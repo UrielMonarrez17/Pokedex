@@ -1,0 +1,9 @@
+{
+    "endpoints": [
+      {
+        "name": "ObtenerPokemons",
+        "method": "GET",
+        "url": "/api/pokemon"
+      }
+    ]
+  }
