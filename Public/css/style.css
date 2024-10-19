@@ -26,6 +26,9 @@ body {
     display: flex;
     height: 90vh;
     width: 90vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     box-sizing: border-box;
     background-color: #f5f5f5;
 }
@@ -33,64 +36,48 @@ body {
 .pokemon-display {
     width: 70%;
     display: flex;
-    /*flex-direction: column;   Cambiado a columna para apilar elementos */
-    align-items: flex-start; /* Alinear a la izquierda */
-    padding: 10px; /* Agregar un poco de padding */
-    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .pokemon-name {
     background-color: rgb(177, 76, 76); /* Fondo rojo */
+margin-top: 2%;
     border: 2px solid #302727; /* Borde negro */
     border-radius: 8px; /* Esquinas redondeadas */
-    padding: 5px; /* Espaciado interno */
     color: white; /* Color de texto blanco */
     width: 100%; /* Ocupa todo el ancho disponible */
     text-align: center; /* Centra el texto */
-    margin-bottom: 15px; /* Separación de la imagen */
 }
 
-.image-stats-container {
-    display: flex; /* Alinear imagen y estadísticas horizontalmente */
-    justify-content: space-between; /* Espacio entre imagen y stats */
-    width: 100%; /* Ocupa todo el ancho */
-    align-items: center; /* Alinear los elementos verticalmente */
-    margin-bottom: 15px; /* Separación entre imagen+stats y el tipo */
-}
 
 .image-container {
     position: relative; /* Para permitir posicionamiento absoluto del círculo blanco */
     display: flex; /* Para centrar la imagen dentro */
-    width: 50%; /* Ancho del rectángulo */
-    height: 325px;
-    justify-content: center; /* Centra horizontalmente */
-    align-items:  flex-start; /* Centra verticalmente */
-    margin-bottom: 15px; /* Separación del tipo */
+
+    flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
 }
 
 .red-background {
-    position: absolute; /* Posiciona el rectángulo detrás de la imagen */
-    width: 100%; /* Ancho del rectángulo igual al de la imagen más un margen */
-    height: 325px; /* Alto del rectángulo igual a la imagen más el margen */
+    display:flex;
+   
+    width: 130px; /* Ancho del rectángulo igual al de la imagen más un margen */
+    height: 130px; /* Alto del rectángulo igual a la imagen más el margen */
     background-color: rgb(177, 76, 76); /* Color de fondo rojo */
     border-radius: 10px; /* Esquinas redondeadas */
+    justify-content: center;
+    align-items: center;
     z-index: 1; /* Asegura que el fondo esté detrás de la imagen */
 }
 
 .image-container img {
-    width: 300px; /* Ancho de la imagen */
-    height: 300px; /* Alto de la imagen */
+    width: 50% ; /* Ancho de la imagen */
+    height: 50% ; /* Alto de la imagen */
     border-radius: 50%; /* Hace que la imagen sea circular */
     background-color: white; /* Color de fondo blanco */
-    position: absolute; 
-    top: 10px;/* Asegura que el círculo blanco esté sobre el fondo rojo */
-    z-index: 2; /* Asegura que la imagen esté encima del fondo */
-}
-
-.pokemon-display img {
-    width: 300px; /* Ancho de la imagen */
-    height: 300px; /* Alto de la imagen */
-    margin-bottom: 15px; /* Separación del tipo */
+    z-index: 2;
 }
 
 .pokemon-display p {
@@ -104,11 +91,17 @@ body {
     margin: 10px 0;
 }
 
+.sidebar-container{
+    height: 300px;
+    display: flex;
+    width: 80px;
+    align-items: center;
+    margin-left: 5%;
+}
 .sidebar {
-    width: 15%;
+    width: 100%;
     background-color: #f2f2f2;
     padding: 10px;
-    margin-left: 30px;  /* Ajuste del margen */
     border: 2px solid black;
     border-radius: 15px;
     position: relative;  /* Necesario para ::before y ::after */
@@ -119,7 +112,7 @@ body {
     content: '';
     position: absolute;
     top: 10px; /* Empieza desde la parte superior */
-    height: calc(100% - 20px); /* Altura total menos el padding */
+    height:90%; /* Altura total menos el padding */
     z-index: -1;  /* Asegura que las franjas queden detrás de la barra */
 }
 
@@ -145,9 +138,10 @@ body {
 }
 
 .sidebar li {
-    padding: 10px;
+    padding: 5%;
     cursor: pointer;
     border-bottom: 1px solid #ddd;
+    font-size: xx-small;
     font-family: 'Courier New', Courier, monospace; /* Para simular un estilo más "digital" */
 }
 
@@ -157,11 +151,10 @@ body {
 
 .base-stats {
     display: flex;
-    /*flex-direction: column;*/
+    flex-direction: column;
     justify-content: center; /* Alinear el contenido de stats verticalmente */
     align-items: center; /* Centrar el contenido horizontalmente */
-    width: calc(100% - 325px); /* El resto del espacio después de la imagen */
-    height: 325px;
+
     border: 2px solid #302727;
     border-radius: 8px;
     padding: 10px;
@@ -169,13 +162,79 @@ body {
     margin-left: 15px; /* Añadir espacio entre imagen y stats */
 }
 
-.base-stats h3 {
-    margin: 0 0 10px 0; /* Margen inferior para separar el título de los stats */
-}
-
 .stat {
     width: 100%; /* Ocupa todo el ancho disponible */
     display: flex; /* Usar flex para alinear los datos */
     justify-content: space-between; /* Separar etiquetas y valores */
-    padding: 5px 0; /* Espaciado vertical entre cada stat */
+    flex-direction: column;
+    font-size: xx-small;
 }
+
+.type-container{
+    display: flex;
+    flex-direction: column;
+align-items: center;
+width: 50%;
+  }
+
+  .poison{
+    display: flex;
+    justify-content: center;
+width: 70px;
+height: 20px;
+border-radius: 20px;
+background-color: rgb(159, 0, 159);
+margin: 1%;
+  }
+
+  .grass{
+    display: flex;
+    justify-content: center;
+width: 70px;
+height: 20px;
+border-radius: 20px;
+background-color: green;
+margin: 1%;
+  }
+
+  .flying{
+    display: flex;
+    justify-content: center;
+width: 70px;
+height: 20px;
+border-radius: 20px;
+background-color: yellow;
+margin: 1%;
+  }
+.busca{
+    background-color: rgb(145, 8, 8);
+    border-radius: 10px ;
+}
+  .stats_base{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+width: 50%;
+justify-content: center;
+margin-bottom: 2%;
+  }
+
+  .general_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+  }
+
+  .flecha_der{
+    width: 15px;
+    cursor: pointer;
+  }
+
+  .flecha_izq{
+    width: 15px;
+    transform: rotate(180deg);
+    cursor: pointer;
+  }

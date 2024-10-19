@@ -65,6 +65,9 @@ background-color: rgb(144,20,22);
     justify-content: center;
 }
 
+.tarjetaLink{
+text-emphasis: none;
+}
 
 .imagenes{
     
@@ -120,3 +123,6 @@ border: 16px solid rgb(14,79,169);
     background-position: center;
     color: white;
   }
+
+
+  
